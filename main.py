@@ -22,7 +22,11 @@ repos = [
 
 def fetch_repo_data(repo_name):
     url = f"https://api.github.com/repos/{repo_name}"
-    response = requests.get(url)
+    headers = {
+        'Accept': 'application/vnd.github.v3.star+json',
+        'Authorization': f'token {GITHUB_TOKEN}'
+    }
+    response = requests.get(url, headers=headers)
     if response.status_code == 200:
         return response.json()
     else:
