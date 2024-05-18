@@ -20,6 +20,11 @@ repos = [
     # Add more repositories as needed
 ]
 
+st.set_page_config(
+    page_title="Open Source QA Automation Tools Trends",
+    page_icon="🔍"
+)
+
 def fetch_repo_data(repo_name):
     url = f"https://api.github.com/repos/{repo_name}"
     headers = {
