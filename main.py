@@ -24,6 +24,18 @@ st.set_page_config(
     page_title="Open Source QA Automation Tools Trends",
     page_icon="🔍"
 )
+# Visitor count function
+def update_visitor_count():
+    count_file = 'visitor_count.txt'
+    if os.path.exists(count_file):
+        with open(count_file, 'r') as file:
+            count = int(file.read())
+    else:
+        count = 0
+    count += 1
+    with open(count_file, 'w') as file:
+        file.write(str(count))
+    return count
 
 def fetch_repo_data(repo_name):
     url = f"https://api.github.com/repos/{repo_name}"
@@ -160,6 +172,8 @@ def main():
     st.title("Top 5 Open Source Automation Tools")
 
     st.info(f"Data showing the GitHub STARS trends over the last 10 years.", icon="🌟")
+    visitor_count = update_visitor_count()
+    st.sidebar.markdown(f"**Visitor Count:** {visitor_count}")
 
     repo_data = []
     all_star_data = []
