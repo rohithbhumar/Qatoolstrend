@@ -173,7 +173,7 @@ def main():
 
     st.info(f"Data showing the GitHub STARS trends over the last 10 years.", icon="🌟")
     visitor_count = update_visitor_count()
-    st.sidebar.markdown(f"**Visitor Count:** {visitor_count}")
+    # st.sidebar.markdown(f"**Visitor Count:** {visitor_count}")
 
     repo_data = []
     all_star_data = []
@@ -213,7 +213,7 @@ def main():
             st.write(f"**Repository:** {repo['repo_name']}")
             st.write(f"**Stars:** {repo['stars']}")
             st.write(f"**Forks:** {repo['forks']}")
-
+    st.text(f"**Visitor Count:** {visitor_count}")
 
 if __name__ == "__main__":
     main()
