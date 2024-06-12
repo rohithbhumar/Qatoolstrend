@@ -8,6 +8,7 @@ from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from copies_data_stargazers import *
 
+load_dotenv()
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
 # List of top automation tools
@@ -213,7 +214,7 @@ def main():
             st.write(f"**Repository:** {repo['repo_name']}")
             st.write(f"**Stars:** {repo['stars']}")
             st.write(f"**Forks:** {repo['forks']}")
-    st.text(f"Visitor Count: {visitor_count}")
+    st.text(f"👁️‍🗨️ \n{visitor_count}")
 
 if __name__ == "__main__":
     main()
