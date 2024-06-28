@@ -214,7 +214,7 @@ def main():
             st.write(f"**Repository:** {repo['repo_name']}")
             st.write(f"**Stars:** {repo['stars']}")
             st.write(f"**Forks:** {repo['forks']}")
-    st.text(f"👁️‍🗨️ \n{visitor_count}")
+    # st.text(f"👁️‍🗨️ \n{visitor_count}")
 
 if __name__ == "__main__":
     main()
